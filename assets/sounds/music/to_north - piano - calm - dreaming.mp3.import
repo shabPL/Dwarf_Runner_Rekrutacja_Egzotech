@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/to_north - piano - calm - dreaming.mp3-c18a09ef18a3ae674ab202d167cca904.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/music/to_north - piano - calm - dreaming.mp3"
+dest_files=[ "res://.import/to_north - piano - calm - dreaming.mp3-c18a09ef18a3ae674ab202d167cca904.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

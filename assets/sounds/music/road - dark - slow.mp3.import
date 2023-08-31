@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/road - dark - slow.mp3-c1c15e80020edc5fbf3d7335273b92b2.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/music/road - dark - slow.mp3"
+dest_files=[ "res://.import/road - dark - slow.mp3-c1c15e80020edc5fbf3d7335273b92b2.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

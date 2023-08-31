@@ -1,0 +1,187 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://assets/enviroment/background4a.png" type="Texture" id=1]
+[ext_resource path="res://assets/enviroment/background1.png" type="Texture" id=2]
+[ext_resource path="res://assets/enviroment/background2.png" type="Texture" id=3]
+[ext_resource path="res://assets/enviroment/background3.png" type="Texture" id=4]
+[ext_resource path="res://assets/enviroment/mainlev_build.png" type="Texture" id=5]
+[ext_resource path="res://scenes/player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/background.gd" type="Script" id=7]
+[ext_resource path="res://scenes/flying_eye.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/HUD.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/hedgehog.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/Dead Scene.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/foxc.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/sounds/music/to_north - piano - calm - dreaming.mp3" type="AudioStream" id=13]
+[ext_resource path="res://scenes/przeciwnik.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/minient.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/zabomozg.tscn" type="PackedScene" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 491.5, 10 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 7 )
+przeciwnicy = [ ExtResource( 10 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 15 ), ExtResource( 14 ), ExtResource( 16 ) ]
+
+[node name="background" type="ParallaxBackground" parent="."]
+
+[node name="tlo" type="ParallaxLayer" parent="background"]
+motion_mirroring = Vector2( 960, 0 )
+
+[node name="b1" type="Sprite" parent="background/tlo"]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="b2" type="Sprite" parent="background/tlo"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="b3" type="Sprite" parent="background/tlo"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="b4" type="Sprite" parent="background/tlo"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 960, 480 )
+
+[node name="podłoga" type="ParallaxLayer" parent="background"]
+motion_mirroring = Vector2( 960, 0 )
+
+[node name="podpory" type="Node2D" parent="background/podłoga"]
+
+[node name="Sprite" type="Sprite" parent="background/podłoga/podpory"]
+position = Vector2( 133, 431 )
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 880, 96, 48, 48 )
+
+[node name="Sprite2" type="Sprite" parent="background/podłoga/podpory"]
+position = Vector2( 308, 431 )
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 880, 96, 48, 48 )
+
+[node name="Sprite3" type="Sprite" parent="background/podłoga/podpory"]
+position = Vector2( 462, 431 )
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 880, 96, 48, 48 )
+
+[node name="Sprite4" type="Sprite" parent="background/podłoga/podpory"]
+position = Vector2( 599, 431 )
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 880, 96, 48, 48 )
+
+[node name="Sprite5" type="Sprite" parent="background/podłoga/podpory"]
+position = Vector2( 785, 431 )
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 880, 96, 48, 48 )
+
+[node name="Sprite6" type="Sprite" parent="background/podłoga/podpory"]
+position = Vector2( 912, 431 )
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 880, 96, 48, 48 )
+
+[node name="Area2D" type="Area2D" parent="background/podłoga"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background/podłoga/Area2D"]
+position = Vector2( 491, 422 )
+shape = SubResource( 1 )
+
+[node name="droga" type="Node2D" parent="background/podłoga/Area2D"]
+
+[node name="Sprite" type="Sprite" parent="background/podłoga/Area2D/droga"]
+position = Vector2( 181, 219 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -175, 195 )
+region_enabled = true
+region_rect = Rect2( 755, 16, 170, 16 )
+
+[node name="Sprite2" type="Sprite" parent="background/podłoga/Area2D/droga"]
+position = Vector2( 354, 151 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -46, 263 )
+region_enabled = true
+region_rect = Rect2( 755, 16, 170, 16 )
+
+[node name="Sprite3" type="Sprite" parent="background/podłoga/Area2D/droga"]
+position = Vector2( 333, 219 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -175, 195 )
+region_enabled = true
+region_rect = Rect2( 755, 16, 170, 16 )
+
+[node name="Sprite4" type="Sprite" parent="background/podłoga/Area2D/droga"]
+position = Vector2( 637, 219 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -175, 195 )
+region_enabled = true
+region_rect = Rect2( 755, 16, 170, 16 )
+
+[node name="Sprite5" type="Sprite" parent="background/podłoga/Area2D/droga"]
+position = Vector2( 774, 219 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -175, 195 )
+region_enabled = true
+region_rect = Rect2( 755, 16, 170, 16 )
+
+[node name="Sprite6" type="Sprite" parent="background/podłoga/Area2D/droga"]
+position = Vector2( 934, 219 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -175, 195 )
+region_enabled = true
+region_rect = Rect2( 755, 16, 170, 16 )
+
+[node name="Sprite7" type="Sprite" parent="background/podłoga/Area2D/droga"]
+position = Vector2( 981, 219 )
+texture = ExtResource( 5 )
+centered = false
+offset = Vector2( -175, 195 )
+region_enabled = true
+region_rect = Rect2( 755, 16, 170, 16 )
+
+[node name="Gracz" parent="." instance=ExtResource( 6 )]
+position = Vector2( 40, 380 )
+scale = Vector2( 4, 4 )
+
+[node name="eye" parent="." instance=ExtResource( 10 )]
+position = Vector2( 994, 380 )
+
+[node name="Resp" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[node name="przeciwnicy_tu" type="Node2D" parent="."]
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="GUI" instance=ExtResource( 9 )]
+
+[node name="Control" parent="GUI" instance=ExtResource( 11 )]
+visible = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 13 )
+volume_db = -20.0
+autoplay = true
+
+[connection signal="timeout" from="Resp" to="." method="_on_Resp_timeout"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_AudioStreamPlayer2D_finished"]

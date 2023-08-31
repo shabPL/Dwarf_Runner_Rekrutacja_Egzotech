@@ -1,0 +1,109 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://scenes/Dead Scene.tres" type="Theme" id=1]
+[ext_resource path="res://scripts/Dead Scene.gd" type="Script" id=2]
+[ext_resource path="res://scenes/Title_Screen.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://scenes/pressed.tres" type="StyleBox" id=5]
+[ext_resource path="res://scenes/hover.tres" type="StyleBox" id=6]
+[ext_resource path="res://scenes/wynik.tres" type="DynamicFont" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0156863, 0.0156863, 0.0156863, 0.403922 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 1, 0.262745, 0.0470588, 0.203922 )
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -227.0
+margin_top = -140.0
+margin_right = 226.0
+margin_bottom = 140.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Menu" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -49.5
+margin_top = 74.0
+margin_right = 54.5
+margin_bottom = 119.0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 4 )
+text = "Menu"
+
+[node name="Przegranko" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -174.5
+margin_top = 25.0
+margin_right = 174.5
+margin_bottom = 70.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 3 )
+text = "PRZEGRANKO"
+align = 1
+valign = 1
+
+[node name="Wynik" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -69.5
+margin_top = -18.0
+margin_right = 75.5
+margin_bottom = 12.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Wynik : 2137"
+
+[node name="Najlepszu" type="Label" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -116.5
+margin_top = -47.0
+margin_right = 141.5
+margin_bottom = -17.0
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 7 )
+text = "Najlepszy wynnik : 2138"
+
+[node name="Restart" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -61.5
+margin_top = 18.0
+margin_right = 69.5
+margin_bottom = 63.0
+custom_fonts/font = ExtResource( 3 )
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 5 )
+custom_styles/normal = ExtResource( 4 )
+text = "Restart"
+
+[connection signal="pressed" from="Panel/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="Panel/Restart" to="." method="_on_Restart_pressed"]
